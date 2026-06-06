@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+:root {
+  /* MKFF Brand Colors - Professional, hopeful, globally inclusive */
+  --mkff-navy: #0A2540;
+  --mkff-teal: #0D9488;
+  --mkff-gold: #B8860B;
+  --mkff-navy-light: #1E3A5F;
+  --mkff-teal-light: #14B8A6;
+  --mkff-bg: #F8F9FA;
+  --mkff-surface: #FFFFFF;
+  --mkff-text: #111827;
+  --mkff-text-muted: #4B5563;
+  --mkff-border: #E5E7EB;
+
+  /* Fonts via next/font */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@theme inline {
+  --color-background: var(--mkff-bg);
+  --color-foreground: var(--mkff-text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Base typography & layout for beautiful one-pager */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-geist-sans);
+  background: var(--mkff-bg);
+  color: var(--mkff-text);
+}
+
+/* Strong, visible focus states (Web Interface Guidelines) */
+:focus-visible {
+  outline: 2px solid var(--mkff-teal);
+  outline-offset: 2px;
+}
+
+/* Never remove outlines without replacement */
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Reduced motion respect (critical per guidelines) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Elegant section rhythm */
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 80rem; /* 7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Beautiful cards */
+.card {
+  background: var(--mkff-surface);
+  border: 1px solid var(--mkff-border);
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  border-color: var(--mkff-teal);
+}
+
+/* Stat numbers */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* CTAs */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--mkff-navy);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--mkff-navy-light);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--mkff-navy);
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 2px solid var(--mkff-navy);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--mkff-navy);
+  color: white;
+}
+
+/* Accent teal button variant */
+.btn-accent {
+  background: var(--mkff-teal);
+  color: white;
+}
+
+.btn-accent:hover {
+  background: var(--mkff-teal-light);
+}
+
+/* Form styles per guidelines */
+input, textarea, select {
+  font-family: inherit;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--mkff-teal);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+  outline: none;
+}
+
+/* Headings - balance to avoid widows (guidelines) */
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+/* Curly quotes in content where appropriate via CSS or prose */
+.prose-quote {
+  quotes: "\u201C" "\u201D" "\u2018" "\u2019";
+}
+
+/* Sticky nav */
+.nav {
+  backdrop-filter: blur(12px);
+  background: rgba(248, 249, 250, 0.95);
+  border-bottom: 1px solid var(--mkff-border);
+}
+
+/* Ensure links are proper <a> or Next Link, buttons for actions */
+a, button {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
