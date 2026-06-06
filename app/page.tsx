@@ -53,7 +53,7 @@ export default function MKFFOnePage() {
         </div>
       </section>
 
-      <MKFFFooter />
+      <MKFFooter />
     </div>
   );
 }
