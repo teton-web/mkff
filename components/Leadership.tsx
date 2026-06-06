@@ -1,55 +1,131 @@
 "use client";
 
-import { Users } from "lucide-react";
-
 export function Leadership() {
-  const leaders = [
+  const board = [
     {
-      name: "Sherry M. Knowles",
-      role: "Founder, President & Executive Director",
-      bio: "Intellectual property attorney and former Senior Vice President & Chief Patent Counsel at GlaxoSmithKline. Extensive work with WIPO on technology transfer and access to medicines in developing countries. Creator of the Kectil Program.",
+      label: "Director",
+      value: "Brooke M. Shafer",
     },
     {
-      name: "Brooke M. Shafer",
-      role: "Director",
-      bio: "Director of the Malmar Knowles Family Foundation. Works alongside the Executive Director on strategy, operations, and global program delivery.",
+      label: "Director",
+      value: "Christopher Zalesky",
     },
     {
-      name: "Christopher Zalesky",
-      role: "Director",
-      bio: "Director providing governance and strategic oversight for the Foundation’s mission and long-term sustainability.",
+      label: "Financials",
+      value: "Public 990-PF filings",
     },
   ];
 
   return (
-    <section id="leadership" className="section bg-white border-y">
+    <section
+      id="leadership"
+      className="section border-t border-[var(--mkff-border)] bg-[var(--mkff-cream)]"
+    >
       <div className="container">
-        <div className="max-w-2xl mb-10">
-          <div className="uppercase text-xs tracking-[3px] font-semibold text-[var(--mkff-teal)] mb-2">Volunteer Leadership</div>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter text-[var(--mkff-navy)]">Governance & Transparency</h2>
-          <p className="mt-4 text-lg text-[var(--mkff-text-muted)]">
-            All officers and directors serve without compensation. 100% of charitable disbursements go directly to programs.
-          </p>
+        <div className="section-rule pb-20">
+          <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
+            § 04 — Leadership
+          </div>
+          <div className="hidden text-xs uppercase tracking-[0.18em] text-[var(--mkff-gray)] sm:block">
+            Founder, Board, & Counsel
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {leaders.map((leader, index) => (
-            <div key={index} className="card p-7">
-              <div className="h-20 w-20 rounded-full bg-[var(--mkff-navy)]/5 mb-6 flex items-center justify-center">
-                <Users className="h-9 w-9 text-[var(--mkff-navy)]" />
+        <div className="grid gap-12 border-b border-[var(--mkff-border)] pb-20 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-20">
+          <div className="flex flex-col gap-4">
+            <div className="mkff-panel-gradient relative flex min-h-[420px] flex-col justify-between overflow-hidden p-8 text-[var(--mkff-cream)] md:min-h-[480px]">
+              <div className="flex justify-between text-[10px] font-semibold uppercase tracking-[0.3em] text-white/65">
+                <span>The Founder</span>
+                <span>Est. 2015</span>
               </div>
-              <div className="font-semibold text-xl tracking-tight text-[var(--mkff-navy)]">{leader.name}</div>
-              <div className="text-[var(--mkff-teal)] text-sm font-medium mb-4">{leader.role}</div>
-              <p className="text-sm text-[var(--mkff-text-muted)] leading-relaxed">{leader.bio}</p>
+              <div className="absolute left-1/2 top-1/2 h-28 w-px bg-white/15" />
+              <div className="font-display text-[34px] font-light italic leading-10">
+                Building the people who will build their nations.
+              </div>
             </div>
-          ))}
+            <div className="flex items-baseline justify-between gap-4 text-[11px]">
+              <div className="font-semibold uppercase tracking-[0.25em] text-[var(--mkff-gray)]">
+                Founder & President
+              </div>
+              <div className="font-editorial italic text-[var(--mkff-gray)]">
+                Atlanta, GA
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-7 pt-2">
+            <h2 className="font-display text-5xl font-light leading-none text-[var(--mkff-oxblood)] md:text-[84px]">
+              Sherry M.
+              <br />
+              Knowles
+            </h2>
+            <p className="max-w-xl text-[17px] leading-8 text-[var(--mkff-charcoal)]">
+              An intellectual property attorney whose career took her to the
+              highest levels of global pharmaceutical strategy and to the World
+              Intellectual Property Organization, where her work on technology
+              transfer to developing countries reshaped what she thought a
+              foundation could be for.
+            </p>
+            <p className="max-w-xl text-[17px] leading-8 text-[var(--mkff-charcoal)]">
+              She founded MKFF in 2015 with a clear premise: the most decisive
+              intervention in any country’s future is the kind of person it
+              raises into leadership. The Kectil Program is the answer she has
+              built.
+            </p>
+            <div className="grid gap-6 border-y border-[var(--mkff-border)] py-6 md:grid-cols-3 md:gap-10">
+              <div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[var(--mkff-gray)]">
+                  Practice
+                </div>
+                <div className="mt-2 font-display text-lg font-medium text-[var(--mkff-oxblood)]">
+                  Knowles IP Strategy
+                </div>
+              </div>
+              <div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[var(--mkff-gray)]">
+                  Service
+                </div>
+                <div className="mt-2 font-display text-lg font-medium text-[var(--mkff-oxblood)]">
+                  WIPO Tech Transfer
+                </div>
+              </div>
+              <div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[var(--mkff-gray)]">
+                  Founded
+                </div>
+                <div className="mt-2 font-display text-lg font-medium text-[var(--mkff-oxblood)]">
+                  MKFF · Est. 2015
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-8 text-sm text-[var(--mkff-text-muted)]">
-          Latest Form 990-PF and financial details are publicly available on{" "}
-          <a href="https://projects.propublica.org/nonprofits/organizations/475203829" target="_blank" rel="noopener noreferrer" className="font-medium underline hover:text-[var(--mkff-navy)]">
-            ProPublica Nonprofit Explorer
-          </a>. EIN: 47-5203829. MKFF is a private foundation organized under the laws of Georgia, USA.
+        <div className="grid gap-8 pt-12 lg:grid-cols-[280px_minmax(0,1fr)]">
+          <div>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gray)]">
+              The Board & Advisors
+            </div>
+            <p className="mt-2 font-display text-[22px] font-light italic leading-8 text-[var(--mkff-oxblood)]">
+              A small board with volunteer governance and program oversight.
+            </p>
+          </div>
+
+          <div className="grid border-l border-[var(--mkff-border)] md:grid-cols-3">
+            {board.map((item) => (
+              <div
+                key={item.value}
+                className="border-r border-[var(--mkff-border)] px-6 py-4"
+              >
+                <div className="font-display text-base font-medium leading-6 text-[var(--mkff-oxblood)]">
+                  {item.value}
+                </div>
+                <div className="mt-1 text-[13px] italic leading-5 text-[var(--mkff-gray)]">
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

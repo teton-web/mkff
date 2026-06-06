@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
 interface NavLink {
   label: string;
@@ -9,18 +9,17 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { label: "About", id: "about" },
+  { label: "Mission", id: "mission" },
+  { label: "Kectil Program", id: "program" },
   { label: "Impact", id: "impact" },
-  { label: "The Program", id: "program" },
-  { label: "Voices", id: "voices" },
   { label: "Leadership", id: "leadership" },
-  { label: "Engage", id: "engage" },
+  { label: "Contact", id: "engage" },
 ];
 
 function scrollToId(id: string) {
   const el = document.getElementById(id);
   if (el) {
-    const offset = 80;
+    const offset = 88;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementPosition = el.getBoundingClientRect().top;
     const offsetPosition = elementPosition - bodyRect - offset;
@@ -33,42 +32,46 @@ export function MKFFNav() {
 
   return (
     <nav className="nav sticky top-0 z-50 w-full">
-      <div className="container flex h-20 items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--mkff-navy)] text-white text-xl font-semibold tracking-[-1px]">
-            MKFF
+      <div className="container flex h-[87px] items-center justify-between">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="text-left"
+          aria-label="Go to top"
+        >
+          <div className="font-display text-2xl font-bold leading-none text-[var(--mkff-oxblood)]">
+            mkff
           </div>
-          <div>
-            <div className="font-semibold tracking-tight text-[var(--mkff-navy)] text-lg">Malmar Knowles</div>
-            <div className="text-[10px] text-[var(--mkff-text-muted)] -mt-1">FAMILY FOUNDATION</div>
+          <div className="mt-1 text-[10px] font-medium uppercase leading-none text-[var(--mkff-oxblood)]">
+            malmar knowles family foundation
           </div>
-        </div>
+        </button>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-9 text-sm font-medium">
+        <div className="hidden items-center gap-9 text-sm font-medium md:flex">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollToId(link.id)}
-              className="text-[var(--mkff-text-muted)] hover:text-[var(--mkff-navy)] transition-colors"
+              className="text-[var(--mkff-ink)] hover:text-[var(--mkff-oxblood)]"
             >
               {link.label}
             </button>
           ))}
+        </div>
+
+        <div className="hidden md:block">
           <a
             href="https://kectil.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-sm px-6 py-2.5"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--mkff-oxblood)] px-5 py-2.5 text-sm font-semibold text-[var(--mkff-cream)] hover:bg-[var(--mkff-maroon)]"
           >
-            Apply to Kectil <ArrowRight className="h-4 w-4" />
+            Apply to Kectil <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 -mr-2 text-[var(--mkff-navy)]"
+          className="-mr-2 p-2 text-[var(--mkff-ink)] md:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
@@ -76,10 +79,9 @@ export function MKFFNav() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t bg-white">
-          <div className="container flex flex-col py-4 gap-1 text-base">
+        <div className="border-t border-[var(--mkff-border)] bg-[var(--mkff-cream)] md:hidden">
+          <div className="container flex flex-col gap-1 py-4 text-base">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -87,7 +89,7 @@ export function MKFFNav() {
                   scrollToId(link.id);
                   setMobileOpen(false);
                 }}
-                className="py-3 text-left text-[var(--mkff-text-muted)] hover:text-[var(--mkff-navy)] border-b border-[var(--mkff-border)] last:border-b-0"
+                className="border-b border-[var(--mkff-border)] py-3 text-left text-[var(--mkff-ink)] last:border-b-0 hover:text-[var(--mkff-oxblood)]"
               >
                 {link.label}
               </button>
@@ -99,7 +101,7 @@ export function MKFFNav() {
               className="btn-primary mt-3 justify-center"
               onClick={() => setMobileOpen(false)}
             >
-              Apply to Kectil <ArrowRight className="h-4 w-4" />
+              Apply to Kectil <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
         </div>

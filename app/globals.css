@@ -1,54 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  /* MKFF Brand Colors - Professional, hopeful, globally inclusive */
-  --mkff-navy: #0A2540;
-  --mkff-teal: #0D9488;
-  --mkff-gold: #B8860B;
-  --mkff-navy-light: #1E3A5F;
-  --mkff-teal-light: #14B8A6;
-  --mkff-bg: #F8F9FA;
-  --mkff-surface: #FFFFFF;
-  --mkff-text: #111827;
-  --mkff-text-muted: #4B5563;
-  --mkff-border: #E5E7EB;
+  --mkff-cream: #F2EDE3;
+  --mkff-white: #FFFFFF;
+  --mkff-oxblood: #B6201D;
+  --mkff-maroon: #3D1410;
+  --mkff-gold: #C9943A;
+  --mkff-ink: #1A1A1A;
+  --mkff-charcoal: #3A3A3A;
+  --mkff-muted: #6F6354;
+  --mkff-gray: #6B6B6B;
+  --mkff-border: #D7CFC0;
+  --mkff-border-light: #E5E1D6;
 
-  /* Fonts via next/font */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-schibsted);
+  --font-serif: var(--font-fraunces);
 }
 
 @theme inline {
-  --color-background: var(--mkff-bg);
-  --color-foreground: var(--mkff-text);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--mkff-cream);
+  --color-foreground: var(--mkff-ink);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
 }
 
-/* Base typography & layout for beautiful one-pager */
 html {
   scroll-behavior: smooth;
+  background: var(--mkff-cream);
 }
 
 body {
-  font-family: var(--font-geist-sans);
-  background: var(--mkff-bg);
-  color: var(--mkff-text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  background: var(--mkff-cream);
+  color: var(--mkff-ink);
 }
 
-/* Strong, visible focus states (Web Interface Guidelines) */
 :focus-visible {
-  outline: 2px solid var(--mkff-teal);
+  outline: 2px solid var(--mkff-gold);
   outline-offset: 2px;
 }
 
-/* Never remove outlines without replacement */
 button:focus:not(:focus-visible),
 a:focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Reduced motion respect (critical per guidelines) */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -60,66 +57,85 @@ a:focus:not(:focus-visible) {
   }
 }
 
-/* Elegant section rhythm */
 .section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 8.75rem;
+    padding-bottom: 7.5rem;
   }
 }
 
-/* Container */
 .container {
   width: 100%;
-  max-width: 80rem; /* 7xl */
+  max-width: 82rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-/* Beautiful cards */
-.card {
-  background: var(--mkff-surface);
-  border: 1px solid var(--mkff-border);
-  border-radius: 0.75rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
-  border-color: var(--mkff-teal);
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
 }
 
-/* Stat numbers */
-.stat-number {
-  font-variant-numeric: tabular-nums;
+.font-editorial {
+  font-family: var(--font-serif), Georgia, serif;
 }
 
-/* CTAs */
+.section-rule {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+.section-rule > * {
+  min-width: 0;
+}
+
+.section-rule > :first-child {
+  order: 1;
+  flex-shrink: 0;
+}
+
+.section-rule > :not(:first-child) {
+  order: 3;
+  flex-shrink: 0;
+}
+
+.section-rule::after {
+  content: "";
+  order: 2;
+  flex: 1;
+  height: 1px;
+  background: var(--mkff-border);
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: var(--mkff-navy);
-  color: white;
-  font-weight: 600;
-  padding: 0.75rem 1.75rem;
-  border-radius: 9999px;
-  transition: all 0.2s ease;
+  background: var(--mkff-oxblood);
+  color: var(--mkff-cream);
+  font-weight: 500;
+  padding: 1rem 1.35rem;
+  border-radius: 0.125rem;
   text-decoration: none;
 }
 
 .btn-primary:hover {
-  background: var(--mkff-navy-light);
-  transform: translateY(-1px);
+  background: var(--mkff-maroon);
 }
 
 .btn-secondary {
@@ -128,59 +144,50 @@ a:focus:not(:focus-visible) {
   justify-content: center;
   gap: 0.5rem;
   background: transparent;
-  color: var(--mkff-navy);
-  font-weight: 600;
-  padding: 0.75rem 1.75rem;
-  border-radius: 9999px;
-  border: 2px solid var(--mkff-navy);
-  transition: all 0.2s ease;
+  color: inherit;
+  font-weight: 500;
+  padding: 0.95rem 1.35rem;
+  border-radius: 0.125rem;
+  border: 1px solid currentColor;
   text-decoration: none;
 }
 
 .btn-secondary:hover {
-  background: var(--mkff-navy);
-  color: white;
+  background: color-mix(in srgb, currentColor 8%, transparent);
 }
 
-/* Accent teal button variant */
-.btn-accent {
-  background: var(--mkff-teal);
-  color: white;
-}
-
-.btn-accent:hover {
-  background: var(--mkff-teal-light);
-}
-
-/* Form styles per guidelines */
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: inherit;
 }
 
-input:focus, textarea:focus {
-  border-color: var(--mkff-teal);
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+input:focus,
+textarea:focus {
+  border-color: var(--mkff-gold);
+  box-shadow: 0 0 0 3px rgba(201, 148, 58, 0.16);
   outline: none;
 }
 
-/* Headings - balance to avoid widows (guidelines) */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-wrap: balance;
 }
 
-/* Curly quotes in content where appropriate via CSS or prose */
-.prose-quote {
-  quotes: "\u201C" "\u201D" "\u2018" "\u2019";
+.mkff-panel-gradient {
+  background-image:
+    radial-gradient(circle farthest-corner at 50% 50%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0)),
+    linear-gradient(150deg, #2A0F0A 0%, #451A14 42%, #B6201D 88%, #C9943A 130%);
 }
 
-/* Sticky nav */
 .nav {
-  backdrop-filter: blur(12px);
-  background: rgba(248, 249, 250, 0.95);
+  background: rgba(242, 237, 227, 0.95);
   border-bottom: 1px solid var(--mkff-border);
+  backdrop-filter: blur(12px);
 }
 
-/* Ensure links are proper <a> or Next Link, buttons for actions */
-a, button {
-  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+a,
+button {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }

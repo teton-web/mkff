@@ -1,54 +1,148 @@
 export function MKFFooter() {
   return (
-    <footer className="mt-auto border-t bg-white py-12 text-sm">
+    <footer className="mt-auto bg-[var(--mkff-maroon)] py-14 text-sm text-[var(--mkff-cream)] md:py-24">
       <div className="container">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-y-10">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--mkff-navy)] text-white text-sm font-semibold">MKFF</div>
-              <span className="font-semibold tracking-tight text-[var(--mkff-navy)]">Malmar Knowles Family Foundation</span>
+        <div className="grid gap-12 border-b border-white/20 pb-16 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-16">
+          <div className="flex flex-col gap-6">
+            <div className="font-display text-6xl font-semibold leading-none">
+              mkff.
             </div>
-            <address className="not-italic text-[var(--mkff-text-muted)] leading-relaxed">
-              400 Perimeter Center Terrace, Suite 200<br />
-              Atlanta, Georgia 30346 USA<br />
-              (770) 335-0799
-            </address>
+            <div className="max-w-md font-display text-[22px] font-light italic leading-8 text-white/80">
+              Identifying and nurturing high-potential youth who will transform
+              their communities and their countries.
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-8 text-[var(--mkff-text-muted)]">
+          <div className="grid gap-10 pt-4 sm:grid-cols-3">
             <div>
-              <div className="font-medium text-[var(--mkff-navy)] mb-3">Resources</div>
-              <ul className="space-y-1.5">
-                <li><a href="https://kectil.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--mkff-navy)]">Kectil Program</a></li>
-                <li><a href="https://kectil.com/posts" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--mkff-navy)]">News & Stories</a></li>
-                <li><a href="https://projects.propublica.org/nonprofits/organizations/475203829" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--mkff-navy)]">Financials (ProPublica)</a></li>
+              <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
+                Foundation
+              </div>
+              <ul className="space-y-3 text-white/80">
+                <li>
+                  <a href="#mission" className="hover:text-white">
+                    Our Mission
+                  </a>
+                </li>
+                <li>
+                  <a href="#leadership" className="hover:text-white">
+                    Leadership
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://projects.propublica.org/nonprofits/organizations/475203829"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    Annual Report
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://projects.propublica.org/nonprofits/organizations/475203829"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    501(c)(3) Filings
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
-              <div className="font-medium text-[var(--mkff-navy)] mb-3">Connect</div>
-              <ul className="space-y-1.5">
-                <li><a href="https://kectil.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--mkff-navy)]">kectil.com</a></li>
-                <li><a href="https://www.linkedin.com/company/the-malmar-knowles-family-foundation-the-kectil-program" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--mkff-navy)]">LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/thekectilprogram/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--mkff-navy)]">Instagram</a></li>
+              <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
+                Program
+              </div>
+              <ul className="space-y-3 text-white/80">
+                <li>
+                  <a
+                    href="https://kectil.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    The Kectil Program
+                  </a>
+                </li>
+                <li>
+                  <a href="#program" className="hover:text-white">
+                    Curriculum
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://kectil.com/posts"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    Alumni Network
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://kectil.com/posts"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    World Youth Podcast
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
-              <div className="font-medium text-[var(--mkff-navy)] mb-3">Legal</div>
-              <ul className="space-y-1.5 text-[13px]">
-                <li>EIN: 47-5203829</li>
-                <li>501(c)(3) Private Foundation</li>
-                <li>Tax-deductible contributions (U.S.)</li>
-                <li className="pt-1">© {new Date().getFullYear()} Malmar Knowles Family Foundation, Inc.</li>
+              <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
+                Contact
+              </div>
+              <ul className="space-y-3 text-white/80">
+                <li>
+                  <a href="mailto:info@mkff.org" className="hover:text-white">
+                    info@mkff.org
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+17703350799" className="hover:text-white">
+                    (770) 335-0799
+                  </a>
+                </li>
+                <li>Atlanta, Georgia, USA</li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/the-malmar-knowles-family-foundation-the-kectil-program"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t text-[11px] text-[var(--mkff-text-muted)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-          <div>
-            This site is a one-page informational resource for the Foundation. The Kectil Program and applications are managed at kectil.com.
+        <div className="flex flex-col gap-8 pt-20 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-2">
+            <div className="text-[11px] font-medium uppercase tracking-[0.28em] text-white/50">
+              The Kectil Program
+            </div>
+            <div className="font-display text-sm font-light italic leading-6 text-white/70">
+              A free, one-year leadership program for 17–26 year-olds from
+              developing nations. Apply at kectil.com.
+            </div>
           </div>
-          <div className="text-right">Built with care for global youth leadership.</div>
+          <div className="flex flex-wrap gap-x-8 gap-y-3 text-xs font-medium text-white/60">
+            <div>
+              © 2015 – {new Date().getFullYear()} Malmar Knowles Family
+              Foundation
+            </div>
+            <div>EIN: 47-5203829</div>
+            <div>Privacy</div>
+            <div>Terms</div>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,38 +1,63 @@
-"use client";
-
-import { Users, Globe, Award, Heart } from "lucide-react";
-import { StatCounter } from "./StatCounter";
-
 export function Impact() {
   const stats = [
-    { number: 20900, suffix: "+", label: "Youth Leaders Empowered", icon: Users },
-    { number: 100, suffix: "+", label: "Developing Countries", icon: Globe },
-    { number: 10, suffix: "", label: "Years of the Kectil Program", icon: Award },
-    { number: 155, suffix: "", label: "Community Projects in 2025", icon: Heart },
+    {
+      index: "i.",
+      value: "10",
+      label: "years of operation, with cohorts continuous since 2016.",
+    },
+    {
+      index: "ii.",
+      value: "20.9k",
+      label:
+        "young leaders engaged through the Kectil Program and Alumni Network.",
+    },
+    {
+      index: "iii.",
+      value: "100+",
+      label: "developing and least-developed countries represented across cohorts.",
+    },
+    {
+      index: "iv.",
+      value: "100%",
+      label: "charitable — the program is free for every accepted participant.",
+    },
   ];
 
   return (
-    <section id="impact" className="section">
+    <section id="impact" className="section bg-[var(--mkff-maroon)]">
       <div className="container">
-        <div className="text-center mb-12">
-          <div className="text-xs uppercase tracking-[3px] font-semibold text-[var(--mkff-teal)] mb-2">10 Years of Measurable Impact</div>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter text-[var(--mkff-navy)]">By the Numbers</h2>
+        <div className="flex flex-col gap-6 pb-16 md:flex-row md:items-baseline md:gap-8">
+          <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
+            § 02 — By the Numbers
+          </div>
+          <div className="hidden h-px flex-1 bg-white/20 md:block" />
+          <div className="font-display text-xl font-light italic leading-7 text-white/70">
+            Ten years of measurable reach.
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {stats.map((stat, i) => (
-            <div key={i} className="card p-8 text-center">
-              <stat.icon className="mx-auto mb-4 h-6 w-6 text-[var(--mkff-teal)]" />
-              <div className="text-5xl font-semibold tracking-tighter text-[var(--mkff-navy)] mb-2">
-                <StatCounter end={stat.number} suffix={stat.suffix} />
+        <div className="grid gap-8 md:grid-cols-4 md:gap-0">
+          {stats.map((stat, index) => (
+            <div
+              key={stat.value}
+              className={[
+                "flex flex-col gap-5 py-4 md:px-10",
+                index === 0 ? "md:pl-0" : "",
+                index < stats.length - 1 ? "md:border-r md:border-white/20" : "",
+                index === stats.length - 1 ? "md:pr-0" : "",
+              ].join(" ")}
+            >
+              <div className="text-[11px] font-medium uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
+                {stat.index}
               </div>
-              <div className="text-sm font-medium text-[var(--mkff-text-muted)]">{stat.label}</div>
+              <div className="font-display text-[72px] font-light leading-none text-[var(--mkff-cream)] md:text-[90px]">
+                {stat.value}
+              </div>
+              <div className="text-sm font-medium leading-6 text-white/85">
+                {stat.label}
+              </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-8 text-center text-sm text-[var(--mkff-text-muted)] max-w-xl mx-auto">
-          In 2025 alone, Kectil colleagues launched 155 community projects engaging over 1,500 participants. Alumni continue to lead at the UN, in local government, education, health, and social enterprise across the globe.
         </div>
       </div>
     </section>

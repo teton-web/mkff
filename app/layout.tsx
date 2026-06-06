@@ -1,31 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const schibsted = Schibsted_Grotesk({
+  variable: "--font-schibsted",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Malmar Knowles Family Foundation | MKFF",
-  description: "The Malmar Knowles Family Foundation (MKFF) empowers talented youth from developing countries through the Kectil Program — building ethical leaders, innovators, and changemakers across 100+ countries. 10 years. 20,900+ youth leaders. 100% charitable impact.",
+  description:
+    "The Malmar Knowles Family Foundation (MKFF) empowers talented youth from developing countries through the Kectil Program — building ethical leaders, innovators, and changemakers across 100+ countries.",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "Malmar Knowles Family Foundation | MKFF",
-    description: "Empowering the next generation of ethical leaders from developing countries. The Kectil Program has reached 20,900+ youth leaders across 100+ countries in 10 years.",
+    description:
+      "Empowering the next generation of ethical leaders from developing countries through the Kectil Program.",
     images: [{ url: "/og-image.jpg" }],
   },
   metadataBase: new URL("https://mkff.org"),
@@ -37,7 +42,8 @@ const jsonLd = {
   name: "Malmar Knowles Family Foundation",
   alternateName: "MKFF",
   url: "https://mkff.org",
-  description: "The Malmar Knowles Family Foundation empowers talented youth from developing countries through the Kectil Program, advancing ethical leadership, innovation, and governance worldwide.",
+  description:
+    "The Malmar Knowles Family Foundation empowers talented youth from developing countries through the Kectil Program, advancing ethical leadership, innovation, and governance worldwide.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "400 Perimeter Center Terrace, Suite 200",
@@ -63,11 +69,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${schibsted.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F8F9FA] text-[#111827]">
+      <body className="min-h-full flex flex-col bg-[var(--mkff-cream)] text-[var(--mkff-ink)]">
         {children}
-        <Toaster position="top-center" richColors closeButton />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

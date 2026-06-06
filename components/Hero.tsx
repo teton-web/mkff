@@ -1,45 +1,75 @@
-"use client";
-
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <header className="relative flex items-center justify-center bg-[var(--mkff-navy)] text-white pt-20 pb-24 md:pt-24 md:pb-28 overflow-hidden">
-      <div className="container relative z-10 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs tracking-[2px] font-medium mb-6">
-          EST. 2015 • ATLANTA, GEORGIA • 501(c)(3)
+    <header className="bg-[var(--mkff-cream)] px-0 pb-16 pt-12 md:pb-16 md:pt-20">
+      <div className="container">
+        <div className="flex flex-col gap-8 border-b border-[var(--mkff-border)] pb-10 text-xs font-medium uppercase text-[var(--mkff-muted)] md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-3">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-[var(--mkff-gold)]" />
+            <span className="tracking-[0.22em]">
+              Malmar Knowles Family Foundation · Atlanta
+            </span>
+          </div>
+          <span className="tracking-[0.22em]">A 501(c)(3) Foundation</span>
         </div>
 
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tighter leading-[1.05] max-w-5xl mx-auto mb-6">
-          Empowering the Next Generation<br className="hidden md:block" /> of Ethical Leaders from<br className="hidden md:block" /> Developing Countries
-        </h1>
+        <div className="grid gap-12 pt-16 lg:grid-cols-[minmax(0,1fr)_596px] lg:items-end lg:gap-14">
+          <div className="flex flex-col justify-center gap-8">
+            <p className="font-display text-lg font-light italic leading-7 text-[var(--mkff-gold)]">
+              For the next generation of leaders in developing nations —
+            </p>
 
-        <p className="max-w-2xl mx-auto text-xl md:text-2xl text-white/80 tracking-tight mb-10">
-          The Malmar Knowles Family Foundation advances youth leadership, innovation, and ethical governance through the Kectil Program.
-        </p>
+            <h1 className="font-display text-[72px] font-light leading-[0.96] text-[var(--mkff-oxblood)] md:text-[116px] lg:text-[148px]">
+              <span className="block">Lead</span>
+              <span className="block italic">where you</span>
+              <span className="block font-bold">stand.</span>
+            </h1>
+          </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://kectil.com" target="_blank" rel="noopener noreferrer" className="btn-primary bg-white text-[var(--mkff-navy)] hover:bg-white/90 text-base px-8 py-3.5">
-            Explore the Kectil Program <ArrowRight className="h-4 w-4" />
-          </a>
-          <button 
-            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "start" })} 
-            className="btn-secondary border-white/70 text-white hover:bg-white/10"
-          >
-            Learn About Our Mission
-          </button>
-        </div>
+          <div className="mkff-panel-gradient flex min-h-[480px] flex-col justify-between overflow-hidden rounded-md p-7 text-[var(--mkff-cream)] md:min-h-[560px] md:p-9">
+            <div className="relative flex items-start justify-between">
+              <div className="flex flex-col gap-2">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.32em] text-white/60">
+                  Atlanta, Georgia
+                </div>
+                <div className="font-display text-[22px] font-light italic leading-7">
+                  Est. 2015
+                </div>
+              </div>
+              <div className="flex h-13 w-13 items-center justify-center rounded-full border border-white/40 font-display text-lg font-medium">
+                m
+              </div>
+            </div>
 
-        {/* Trust bar */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 text-sm max-w-3xl mx-auto text-white/70">
-          <div className="flex items-center justify-center gap-2">10 Years of Impact</div>
-          <div className="flex items-center justify-center gap-2">20,900+ Youth Leaders</div>
-          <div className="flex items-center justify-center gap-2">100+ Countries</div>
-          <div className="flex items-center justify-center gap-2">100% Charitable</div>
+            <div className="relative flex flex-col gap-6">
+              <div className="h-0.5 w-10 bg-[var(--mkff-gold)]" />
+              <p className="font-display text-2xl leading-9">
+                The Malmar Knowles Family Foundation nurtures high-potential
+                youth from developing nations into the next generation of
+                ethical leaders.
+              </p>
+              <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+                <a
+                  href="https://kectil.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--mkff-cream)] px-5 py-4 text-sm font-semibold text-[#2A0F0A] hover:bg-white"
+                >
+                  Explore the Kectil Program{" "}
+                  <ArrowUpRight className="h-4 w-4 text-[var(--mkff-oxblood)]" />
+                </a>
+                <a
+                  href="#mission"
+                  className="btn-secondary border-white/45 text-[var(--mkff-cream)]"
+                >
+                  Our mission <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff15_1px,transparent_1px)] [background-size:4px_4px]" />
     </header>
   );
 }
