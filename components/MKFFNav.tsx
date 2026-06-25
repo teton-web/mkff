@@ -26,7 +26,7 @@ export function MKFFNav() {
 
   return (
     <nav className="nav sticky top-0 z-50 w-full">
-      <div className="container flex h-[87px] items-center justify-between">
+      <div className="container flex h-20 items-center justify-between md:h-24">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-left"
@@ -38,11 +38,11 @@ export function MKFFNav() {
             width={400}
             height={229}
             priority
-            className="h-12 w-auto"
+            className="h-16 w-auto md:h-20"
           />
         </button>
 
-        <div className="hidden items-center gap-9 text-sm font-medium md:flex">
+        <div className="hidden items-center gap-9 text-sm font-medium lg:flex">
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -54,7 +54,7 @@ export function MKFFNav() {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <a
             href="https://kectil.com"
             target="_blank"
@@ -67,7 +67,7 @@ export function MKFFNav() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="-mr-2 p-2 text-[var(--mkff-ink)] md:hidden"
+          className="-mr-2 p-2 text-[var(--mkff-ink)] lg:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
@@ -76,7 +76,7 @@ export function MKFFNav() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-[var(--mkff-border)] bg-[var(--mkff-cream)] md:hidden">
+        <div className="border-t border-[var(--mkff-border)] bg-[var(--mkff-cream)] lg:hidden">
           <div className="container flex flex-col gap-1 py-4 text-base">
             {navLinks.map((link) => (
               <button

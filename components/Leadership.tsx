@@ -5,14 +5,17 @@ export function Leadership() {
     {
       label: "Director",
       value: "Brooke M. Shafer",
+      image: "/brooke-shafer.jpg",
     },
     {
       label: "Director",
       value: "Christopher Zalesky",
+      image: "/chris-zalesky.jpg",
     },
     {
       label: "Financials",
       value: "Public 990-PF filings",
+      note: "Full financials are filed and published every year.",
     },
   ];
 
@@ -119,17 +122,33 @@ export function Leadership() {
             </p>
           </div>
 
-          <div className="grid border-l border-[var(--mkff-border)] md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {board.map((item) => (
-              <div
-                key={item.value}
-                className="border-r border-[var(--mkff-border)] px-6 py-4"
-              >
-                <div className="font-display text-base font-medium leading-6 text-[var(--mkff-oxblood)]">
-                  {item.value}
-                </div>
-                <div className="mt-1 text-[13px] italic leading-5 text-[var(--mkff-gray)]">
-                  {item.label}
+              <div key={item.value} className="flex flex-col gap-4">
+                {item.image ? (
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[var(--mkff-charcoal)]">
+                    <Image
+                      src={item.image}
+                      alt={`${item.value}, ${item.label} of MKFF`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                ) : (
+                  <div className="mkff-panel-gradient flex aspect-[4/5] items-end overflow-hidden p-6 text-[var(--mkff-cream)]">
+                    <p className="font-display text-[22px] font-light italic leading-8">
+                      {item.note}
+                    </p>
+                  </div>
+                )}
+                <div>
+                  <div className="font-display text-base font-medium leading-6 text-[var(--mkff-oxblood)]">
+                    {item.value}
+                  </div>
+                  <div className="mt-1 text-[13px] italic leading-5 text-[var(--mkff-gray)]">
+                    {item.label}
+                  </div>
                 </div>
               </div>
             ))}
