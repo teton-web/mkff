@@ -27,8 +27,14 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 88px;
+  scroll-padding-top: 96px;
   background: var(--mkff-cream);
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 112px;
+  }
 }
 
 body {

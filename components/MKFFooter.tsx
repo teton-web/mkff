@@ -1,12 +1,18 @@
+import Image from "next/image";
+
 export function MKFFooter() {
   return (
-    <footer className="mt-auto bg-[var(--mkff-maroon)] py-14 text-sm text-[var(--mkff-cream)] md:py-24">
+    <footer className="mt-auto bg-[var(--mkff-maroon)] py-14 text-center text-sm text-[var(--mkff-cream)] sm:text-left md:py-24">
       <div className="container">
         <div className="grid gap-12 border-b border-white/20 pb-16 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-16">
           <div className="flex flex-col gap-6">
-            <div className="font-display text-6xl font-semibold leading-none">
-              mkff.
-            </div>
+            <Image
+              src="/mkff-logo.png"
+              alt="MKFF — Malmar Knowles Family Foundation"
+              width={400}
+              height={229}
+              className="h-28 w-auto self-center brightness-0 invert sm:self-start md:h-36"
+            />
             <div className="max-w-md font-display text-[22px] font-light italic leading-8 text-white/80">
               Identifying and nurturing high-potential youth who will transform
               their communities and their countries.
@@ -124,7 +130,7 @@ export function MKFFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 pt-20 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col items-center gap-8 pt-20 sm:items-start md:flex-row md:items-end md:justify-between">
           <div className="flex flex-col gap-2">
             <div className="text-[11px] font-medium uppercase tracking-[0.28em] text-white/50">
               The Kectil Program
@@ -134,7 +140,7 @@ export function MKFFooter() {
               developing nations. Apply at kectil.com.
             </div>
           </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-3 text-xs font-medium text-white/60">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs font-medium text-white/60 sm:justify-start">
             <div>
               © 2015 – {new Date().getFullYear()} Malmar Knowles Family
               Foundation

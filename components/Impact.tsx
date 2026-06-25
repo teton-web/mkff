@@ -36,21 +36,21 @@ export function Impact() {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-4 md:gap-0">
+        <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0">
           {stats.map((stat, index) => (
             <div
               key={stat.value}
               className={[
-                "flex flex-col gap-5 py-4 md:px-10",
-                index === 0 ? "md:pl-0" : "",
-                index < stats.length - 1 ? "md:border-r md:border-white/20" : "",
-                index === stats.length - 1 ? "md:pr-0" : "",
+                "flex flex-col gap-5 py-4 xl:px-8",
+                index === 0 ? "xl:pl-0" : "",
+                index < stats.length - 1 ? "xl:border-r xl:border-white/20" : "",
+                index === stats.length - 1 ? "xl:pr-0" : "",
               ].join(" ")}
             >
               <div className="text-[11px] font-medium uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
                 {stat.index}
               </div>
-              <div className="font-display text-[72px] font-light leading-none text-[var(--mkff-cream)] md:text-[90px]">
+              <div className="font-display text-[64px] font-light leading-none text-[var(--mkff-cream)] sm:text-[72px]">
                 {stat.value}
               </div>
               <div className="text-sm font-medium leading-6 text-white/85">
