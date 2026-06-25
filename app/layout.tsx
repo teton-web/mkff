@@ -24,16 +24,33 @@ export const metadata: Metadata = {
   title: "Malmar Knowles Family Foundation | MKFF",
   description:
     "The Malmar Knowles Family Foundation (MKFF) empowers talented youth from developing countries through the Kectil Program — building ethical leaders, innovators, and changemakers across 100+ countries.",
-  icons: {
-    icon: "/favicon.ico",
+  metadataBase: new URL("https://mkff.org"),
+  alternates: {
+    canonical: "/",
   },
   openGraph: {
+    type: "website",
+    url: "https://mkff.org",
+    siteName: "Malmar Knowles Family Foundation",
     title: "Malmar Knowles Family Foundation | MKFF",
     description:
       "Empowering the next generation of ethical leaders from developing countries through the Kectil Program.",
-    images: [{ url: "/og-image.jpg" }],
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1280,
+        height: 720,
+        alt: "Malmar Knowles Family Foundation — Lead where you stand.",
+      },
+    ],
   },
-  metadataBase: new URL("https://mkff.org"),
+  twitter: {
+    card: "summary_large_image",
+    title: "Malmar Knowles Family Foundation | MKFF",
+    description:
+      "Empowering the next generation of ethical leaders from developing countries through the Kectil Program.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const jsonLd = {
@@ -42,8 +59,10 @@ const jsonLd = {
   name: "Malmar Knowles Family Foundation",
   alternateName: "MKFF",
   url: "https://mkff.org",
+  logo: "https://mkff.org/icon.svg",
   description:
     "The Malmar Knowles Family Foundation empowers talented youth from developing countries through the Kectil Program, advancing ethical leadership, innovation, and governance worldwide.",
+  telephone: "+1-770-335-0799",
   address: {
     "@type": "PostalAddress",
     streetAddress: "400 Perimeter Center Terrace, Suite 200",
