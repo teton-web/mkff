@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Leadership() {
   const board = [
     {
@@ -32,12 +34,20 @@ export function Leadership() {
         <div className="grid gap-12 border-b border-[var(--mkff-border)] pb-20 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-20">
           <div className="flex flex-col gap-4">
             <div className="mkff-panel-gradient relative flex min-h-[420px] flex-col justify-between overflow-hidden p-8 text-[var(--mkff-cream)] md:min-h-[480px]">
-              <div className="flex justify-between text-[10px] font-semibold uppercase tracking-[0.3em] text-white/65">
+              <Image
+                src="/sherry-knowles.jpg"
+                alt="Sherry M. Knowles, Founder & President of MKFF"
+                fill
+                sizes="380px"
+                priority
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2A0F0A]/70 via-[#2A0F0A]/10 to-[#2A0F0A]/90" />
+              <div className="relative flex justify-between text-[10px] font-semibold uppercase tracking-[0.3em] text-white/75">
                 <span>The Founder</span>
                 <span>Est. 2015</span>
               </div>
-              <div className="absolute left-1/2 top-1/2 h-28 w-px bg-white/15" />
-              <div className="font-display text-[34px] font-light italic leading-10">
+              <div className="relative font-display text-[34px] font-light italic leading-10">
                 Building the people who will build their nations.
               </div>
             </div>

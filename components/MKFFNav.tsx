@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 interface NavLink {
@@ -31,12 +32,14 @@ export function MKFFNav() {
           className="text-left"
           aria-label="Go to top"
         >
-          <div className="font-display text-2xl font-bold leading-none text-[var(--mkff-oxblood)]">
-            mkff
-          </div>
-          <div className="mt-1 text-[10px] font-medium uppercase leading-none text-[var(--mkff-oxblood)]">
-            malmar knowles family foundation
-          </div>
+          <Image
+            src="/mkff-logo.png"
+            alt="MKFF — Malmar Knowles Family Foundation"
+            width={400}
+            height={229}
+            priority
+            className="h-12 w-auto"
+          />
         </button>
 
         <div className="hidden items-center gap-9 text-sm font-medium md:flex">
