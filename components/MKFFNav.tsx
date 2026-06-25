@@ -17,14 +17,7 @@ const navLinks: NavLink[] = [
 ];
 
 function scrollToId(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const offset = 88;
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementPosition = el.getBoundingClientRect().top;
-    const offsetPosition = elementPosition - bodyRect - offset;
-    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-  }
+  document.getElementById(id)?.scrollIntoView();
 }
 
 export function MKFFNav() {
