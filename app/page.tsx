@@ -1,5 +1,6 @@
 import { MKFFNav } from "@/components/MKFFNav";
 import { Hero } from "@/components/Hero";
+import { AboutMKFF } from "@/components/AboutMKFF";
 import { Mission } from "@/components/Mission";
 import { Impact } from "@/components/Impact";
 import { Program } from "@/components/Program";
@@ -19,6 +20,7 @@ export default function MKFFOnePage() {
       <MKFFNav />
       <main id="main">
         <Hero />
+        <AboutMKFF />
         <Mission />
         <Impact />
         <Program />

@@ -14,7 +14,7 @@ export function Mission() {
       <div className="container">
         <div className="section-rule pb-12">
           <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
-            § 01 — Our Mission
+            § 02 — Our Mission
           </div>
           <div className="hidden text-xs uppercase tracking-[0.18em] text-[var(--mkff-gray)] sm:block">
             Established 2015 by Sherry M. Knowles
@@ -34,8 +34,8 @@ export function Mission() {
                 property attorney whose work at the highest levels of global
                 pharma and with WIPO on technology transfer to developing
                 countries inspired a new mission: building the next generation
-                of ethical, innovative leaders — at no cost to the leaders
-                themselves.
+                of ethical, innovative leaders through training, mentorship,
+                and a guided international network.
               </p>
             </div>
           </div>

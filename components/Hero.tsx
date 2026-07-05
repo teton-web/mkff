@@ -11,7 +11,7 @@ export function Hero() {
               Malmar Knowles Family Foundation · Atlanta
             </span>
           </div>
-          <span className="tracking-[0.22em]">A 501(c)(3) Foundation</span>
+          <span className="tracking-[0.22em]">Private foundation</span>
         </div>
 
         <div className="grid gap-12 pt-16 lg:grid-cols-[minmax(0,1fr)_596px] lg:items-end lg:gap-14">
@@ -60,10 +60,10 @@ export function Hero() {
                   <ArrowUpRight className="h-4 w-4 text-[var(--mkff-oxblood)]" />
                 </a>
                 <a
-                  href="#mission"
+                  href="#about"
                   className="btn-secondary border-white/45 text-[var(--mkff-cream)]"
                 >
-                  Our mission <ArrowRight className="h-4 w-4" />
+                  About MKFF <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

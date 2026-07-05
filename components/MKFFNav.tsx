@@ -10,10 +10,10 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
+  { label: "About MKFF", id: "about" },
   { label: "Mission", id: "mission" },
   { label: "Kectil Program", id: "program" },
   { label: "Impact", id: "impact" },
-  { label: "Leadership", id: "leadership" },
   { label: "Contact", id: "engage" },
 ];
 

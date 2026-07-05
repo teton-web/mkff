@@ -19,7 +19,7 @@ export function Impact() {
     {
       index: "iv.",
       value: "100%",
-      label: "charitable — the program is free for every accepted participant.",
+      label: "program access, with no participation fee for accepted youth.",
     },
   ];
 
@@ -28,7 +28,7 @@ export function Impact() {
       <div className="container">
         <div className="flex flex-col gap-6 pb-16 md:flex-row md:items-baseline md:gap-8">
           <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
-            § 02 — By the Numbers
+            § 03 — By the Numbers
           </div>
           <div className="hidden h-px flex-1 bg-white/20 md:block" />
           <div className="font-display text-xl font-light italic leading-7 text-white/70">

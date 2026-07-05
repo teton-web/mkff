@@ -3,19 +3,22 @@ import Image from "next/image";
 export function Leadership() {
   const board = [
     {
+      label: "Founder & Executive Director",
+      value: "Sherry M. Knowles",
+      image: "/sherry-knowles.jpg",
+      bio: "Founder of MKFF and The Kectil Program, Sherry brings legal, international, and leadership experience to the foundation's mission.",
+    },
+    {
       label: "Director",
       value: "Brooke M. Shafer",
       image: "/brooke-shafer.jpg",
+      bio: "Brooke brings marketing research, advertising insights, analytics, and women-in-STEM service experience to MKFF's governance.",
     },
     {
       label: "Director",
-      value: "Christopher Zalesky",
+      value: "Dr. Christopher Zalesky",
       image: "/chris-zalesky.jpg",
-    },
-    {
-      label: "Financials",
-      value: "Public 990-PF filings",
-      note: "Full financials are filed and published every year.",
+      bio: "Chris brings medical, community-service, and international-volunteer experience to the foundation's director group.",
     },
   ];
 
@@ -27,10 +30,10 @@ export function Leadership() {
       <div className="container">
         <div className="section-rule pb-20">
           <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
-            § 04 — Leadership
+            § 05 — Leadership
           </div>
           <div className="hidden text-xs uppercase tracking-[0.18em] text-[var(--mkff-gray)] sm:block">
-            Founder, Board, & Counsel
+            Founder and directors
           </div>
         </div>
 
@@ -39,7 +42,7 @@ export function Leadership() {
             <div className="mkff-panel-gradient relative flex min-h-[420px] flex-col justify-between overflow-hidden p-8 text-[var(--mkff-cream)] md:min-h-[480px]">
               <Image
                 src="/sherry-knowles.jpg"
-                alt="Sherry M. Knowles, Founder & President of MKFF"
+                alt="Sherry M. Knowles, Founder and Executive Director of MKFF"
                 fill
                 sizes="380px"
                 priority
@@ -56,7 +59,7 @@ export function Leadership() {
             </div>
             <div className="flex items-baseline justify-between gap-4 text-[11px]">
               <div className="font-semibold uppercase tracking-[0.25em] text-[var(--mkff-gray)]">
-                Founder & President
+                Founder & Executive Director
               </div>
               <div className="font-editorial italic text-[var(--mkff-gray)]">
                 Atlanta, GA
@@ -78,10 +81,10 @@ export function Leadership() {
               foundation could be for.
             </p>
             <p className="max-w-xl text-[17px] leading-8 text-[var(--mkff-charcoal)]">
-              She founded MKFF in 2015 with a clear premise: the most decisive
-              intervention in any country’s future is the kind of person it
-              raises into leadership. The Kectil Program is the answer she has
-              built.
+              She founded MKFF in 2015 and built The Kectil Program as a
+              global leadership project for the family foundation: a way to
+              connect talented youth across developing countries with training,
+              mentorship, and a durable peer network.
             </p>
             <div className="grid gap-6 border-y border-[var(--mkff-border)] py-6 md:grid-cols-3 md:gap-10">
               <div>
@@ -118,30 +121,22 @@ export function Leadership() {
               The Board & Advisors
             </div>
             <p className="mt-2 font-display text-[22px] font-light italic leading-8 text-[var(--mkff-oxblood)]">
-              A small board with volunteer governance and program oversight.
+              A small director group with hands-on program oversight.
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {board.map((item) => (
               <div key={item.value} className="flex flex-col gap-4">
-                {item.image ? (
-                  <div className="relative aspect-[4/5] overflow-hidden bg-[var(--mkff-charcoal)]">
-                    <Image
-                      src={item.image}
-                      alt={`${item.value}, ${item.label} of MKFF`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
-                      className="object-cover object-top"
-                    />
-                  </div>
-                ) : (
-                  <div className="mkff-panel-gradient flex aspect-[4/5] items-end overflow-hidden p-6 text-[var(--mkff-cream)]">
-                    <p className="font-display text-[22px] font-light italic leading-8">
-                      {item.note}
-                    </p>
-                  </div>
-                )}
+                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--mkff-charcoal)]">
+                  <Image
+                    src={item.image}
+                    alt={`${item.value}, ${item.label} of MKFF`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+                    className="object-cover object-top"
+                  />
+                </div>
                 <div>
                   <div className="font-display text-base font-medium leading-6 text-[var(--mkff-oxblood)]">
                     {item.value}
@@ -149,6 +144,9 @@ export function Leadership() {
                   <div className="mt-1 text-[13px] italic leading-5 text-[var(--mkff-gray)]">
                     {item.label}
                   </div>
+                  <p className="mt-3 text-sm leading-6 text-[var(--mkff-charcoal)]">
+                    {item.bio}
+                  </p>
                 </div>
               </div>
             ))}

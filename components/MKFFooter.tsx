@@ -26,6 +26,11 @@ export function MKFFooter() {
               </div>
               <ul className="space-y-3 text-white/80">
                 <li>
+                  <a href="#about" className="hover:text-white">
+                    About MKFF
+                  </a>
+                </li>
+                <li>
                   <a href="#mission" className="hover:text-white">
                     Our Mission
                   </a>
@@ -33,26 +38,6 @@ export function MKFFooter() {
                 <li>
                   <a href="#leadership" className="hover:text-white">
                     Leadership
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://projects.propublica.org/nonprofits/organizations/475203829"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white"
-                  >
-                    Annual Report
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://projects.propublica.org/nonprofits/organizations/475203829"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white"
-                  >
-                    501(c)(3) Filings
                   </a>
                 </li>
               </ul>
@@ -136,7 +121,7 @@ export function MKFFooter() {
               The Kectil Program
             </div>
             <div className="font-display text-sm font-light italic leading-6 text-white/70">
-              A free, one-year leadership program for 17–26 year-olds from
+              A one-year leadership program for 17–26 year-olds from
               developing nations. Apply at kectil.com.
             </div>
           </div>
@@ -145,7 +130,6 @@ export function MKFFooter() {
               © 2015 – {new Date().getFullYear()} Malmar Knowles Family
               Foundation
             </div>
-            <div>EIN: 47-5203829</div>
             <div>Privacy</div>
             <div>Terms</div>
           </div>

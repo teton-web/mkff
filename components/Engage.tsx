@@ -6,7 +6,7 @@ export function Engage() {
       numeral: "I.",
       label: "For young leaders",
       title: "Apply to the Kectil Program.",
-      body: "Ages 17–26, from developing or least-developed countries, with a demonstrated passion for leadership, scholarship, or innovation. Free for accepted participants.",
+      body: "Ages 17-26, from developing or least-developed countries, with a demonstrated passion for leadership, learning, or innovation.",
       cta: "Apply at kectil.com",
       href: "https://kectil.com",
       dark: false,
@@ -22,11 +22,11 @@ export function Engage() {
     },
     {
       numeral: "III.",
-      label: "For supporters",
-      title: "Support the next generation.",
-      body: "Every dollar goes directly to programming. MKFF is a registered 501(c)(3); contributions are tax-deductible to the extent allowed by U.S. law.",
-      cta: "Give to MKFF",
-      href: "mailto:info@mkff.org?subject=Supporting%20MKFF",
+      label: "For organizations",
+      title: "Share aligned opportunities.",
+      body: "Organizations with leadership, education, governance, or youth-development opportunities can connect with MKFF about appropriate collaboration paths.",
+      cta: "Start the conversation",
+      href: "mailto:info@mkff.org?subject=MKFF%20Collaboration",
       dark: true,
     },
   ];
@@ -39,7 +39,7 @@ export function Engage() {
       <div className="container">
         <div className="section-rule pb-20">
           <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
-            § 05 — Engage with MKFF
+            § 06 — Engage with MKFF
           </div>
           <div className="hidden font-editorial text-lg italic leading-6 text-[var(--mkff-gray)] sm:block">
             Ways to get involved.

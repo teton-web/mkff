@@ -73,7 +73,6 @@ const jsonLd = {
   },
   email: "info@mkff.org",
   foundingDate: "2015",
-  nonprofitStatus: "501(c)(3) Private Foundation",
   sameAs: [
     "https://kectil.com",
     "https://www.linkedin.com/company/the-malmar-knowles-family-foundation-the-kectil-program",
@@ -88,6 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${inter.variable} ${schibsted.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--mkff-cream)] text-[var(--mkff-ink)]">

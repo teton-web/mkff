@@ -33,7 +33,7 @@ export function Program() {
       <div className="container">
         <div className="section-rule pb-16">
           <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
-            § 03 — The Flagship Initiative
+            § 04 — The Flagship Initiative
           </div>
           <div className="hidden text-xs uppercase tracking-[0.18em] text-[var(--mkff-gray)] sm:block">
             Program hub → kectil.com
@@ -47,9 +47,11 @@ export function Program() {
             </h2>
             <p className="max-w-xl text-[15px] leading-6 text-[var(--mkff-muted)]">
               KECTIL — Knowles Educational and Charitable Trust for
-              International Leadership. A free, one-year, web-based program for
-              talented 17–26 year-olds from developing and least-developed
-              countries.
+              International Leadership. A one-year, web-based leadership
+              program for talented 17-26 year-olds from developing and
+              least-developed countries, created to identify, nurture, and
+              connect youth who can make a positive difference in their
+              communities and countries.
             </p>
           </div>
 
@@ -79,7 +81,7 @@ export function Program() {
                   Cost
                 </div>
                 <div className="mt-1 font-display text-lg font-semibold leading-6">
-                  Free for accepted participants
+                  No participation fee
                 </div>
               </div>
               <div>
