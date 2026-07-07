@@ -26,18 +26,28 @@ export function MKFFooter() {
               </div>
               <ul className="space-y-3 text-white/80">
                 <li>
-                  <a href="#about" className="hover:text-white">
+                  <a href="/about" className="hover:text-white">
                     About MKFF
                   </a>
                 </li>
                 <li>
-                  <a href="#mission" className="hover:text-white">
-                    Our Mission
+                  <a href="/about/history" className="hover:text-white">
+                    History of MKFF
                   </a>
                 </li>
                 <li>
-                  <a href="#leadership" className="hover:text-white">
-                    Leadership
+                  <a href="/about/why" className="hover:text-white">
+                    Why I Created Kectil
+                  </a>
+                </li>
+                <li>
+                  <a href="/about/directors" className="hover:text-white">
+                    Our Directors
+                  </a>
+                </li>
+                <li>
+                  <a href="/#mission" className="hover:text-white">
+                    Our Mission
                   </a>
                 </li>
               </ul>
@@ -58,7 +68,7 @@ export function MKFFooter() {
                   </a>
                 </li>
                 <li>
-                  <a href="#program" className="hover:text-white">
+                  <a href="/#program" className="hover:text-white">
                     Curriculum
                   </a>
                 </li>

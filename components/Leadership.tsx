@@ -1,24 +1,29 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function Leadership() {
   const board = [
     {
-      label: "Founder & Executive Director",
+      label: "Founder and Board Chair",
       value: "Sherry M. Knowles",
+      href: "/about/directors/sherry-knowles",
       image: "/sherry-knowles.jpg",
-      bio: "Founder of MKFF and The Kectil Program, Sherry brings legal, international, and leadership experience to the foundation's mission.",
+      bio: "An intellectual property attorney with over 40 years of experience, Sherry created MKFF in 2015 to mentor talented youth leaders in developing countries — a foundation now working in over 100 countries and touching the lives of over 10,000 youth.",
     },
     {
       label: "Director",
-      value: "Brooke M. Shafer",
+      value: "Brooke Shafer",
+      href: "/about/directors/brooke-shafer",
       image: "/brooke-shafer.jpg",
-      bio: "Brooke brings marketing research, advertising insights, analytics, and women-in-STEM service experience to MKFF's governance.",
+      bio: "CEO at CMI, a marketing research and data analytics firm in Atlanta that supports Fortune 500 companies, Brooke holds a Masters of Marketing Research from the University of Georgia's Terry School of Business.",
     },
     {
       label: "Director",
-      value: "Dr. Christopher Zalesky",
+      value: "Dr. Chris Zalesky",
+      href: "/about/directors/christopher-zalesky",
       image: "/chris-zalesky.jpg",
-      bio: "Chris brings medical, community-service, and international-volunteer experience to the foundation's director group.",
+      bio: "An Assistant Professor at Emory University with dual appointments in Anesthesiology (Critical Care) and Emergency Medicine, Chris splits his clinical time between the Cardiovascular ICU, the ECMO Service, and the Emergency Department.",
     },
   ];
 
@@ -42,7 +47,7 @@ export function Leadership() {
             <div className="mkff-panel-gradient relative flex min-h-[420px] flex-col justify-between overflow-hidden p-8 text-[var(--mkff-cream)] md:min-h-[480px]">
               <Image
                 src="/sherry-knowles.jpg"
-                alt="Sherry M. Knowles, Founder and Executive Director of MKFF"
+                alt="Sherry M. Knowles, Founder and Board Chair of MKFF"
                 fill
                 sizes="380px"
                 priority
@@ -59,7 +64,7 @@ export function Leadership() {
             </div>
             <div className="flex items-baseline justify-between gap-4 text-[11px]">
               <div className="font-semibold uppercase tracking-[0.25em] text-[var(--mkff-gray)]">
-                Founder & Executive Director
+                Founder and Board Chair
               </div>
               <div className="font-editorial italic text-[var(--mkff-gray)]">
                 Atlanta, GA
@@ -127,7 +132,11 @@ export function Leadership() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {board.map((item) => (
-              <div key={item.value} className="flex flex-col gap-4">
+              <Link
+                key={item.value}
+                href={item.href}
+                className="group flex flex-col gap-4"
+              >
                 <div className="relative aspect-[4/5] overflow-hidden bg-[var(--mkff-charcoal)]">
                   <Image
                     src={item.image}
@@ -147,8 +156,11 @@ export function Leadership() {
                   <p className="mt-3 text-sm leading-6 text-[var(--mkff-charcoal)]">
                     {item.bio}
                   </p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--mkff-ink)] group-hover:text-[var(--mkff-oxblood)]">
+                    View full profile <ArrowRight className="h-4 w-4" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
