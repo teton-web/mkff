@@ -53,7 +53,7 @@ export type MkffContentBlock =
   | { kind: "p"; text: string }
   | { kind: "quote"; text: string }
   | { kind: "list"; items: readonly string[] }
-  | { kind: "image"; src: string; alt: string; width: number; height: number };
+  | { kind: "image"; src: string; alt: string; width: number; height: number; caption?: string };
 
 export type MkffContentSection = {
   /** Heading exactly as the client wrote it; omitted for untitled intro/closing passages. */
@@ -143,6 +143,10 @@ export const mkffAboutKectilSections: readonly MkffContentSection[] = [
         kind: "p",
         text: "High potential youth (aged 17-26) in least developed and developing countries who have demonstrated a talent and passion for leadership, scholarship or innovation, are proficient in English and have access to a computer and the internet.",
       },
+      {
+        kind: "p",
+        text: "The application portal is usually open from September 15th to October 15th.",
+      },
     ],
   },
 ];
@@ -185,8 +189,24 @@ export const mkffHistorySections: readonly MkffContentSection[] = [
         text: "I attach some of her Passports here, which begin in 1950. Her Passport stamps as early as the 1950’s establish her keen interest in developing countries, with evidence of entry into Egypt, India, Pakistan, Nepal, Thailand, China and other countries.",
       },
       {
+        kind: "image",
+        src: "/about/hilda-passports.jpg",
+        alt: "The green cover of one of Hilda Reeb's United States passports, No. 363186",
+        width: 578,
+        height: 925,
+        caption: "Hilda’s Passports",
+      },
+      {
         kind: "p",
         text: "Hilda’s father, my great-grandfather, Charles E. Reeb, born in 1869, was a successful businessman and entrepreneur. He was in the business of construction materials, starting the company “Door & Sash” in Pennsylvania and then creating Reeb Millwork in 1912 in New Jersey. The Reebs lived on Highland Avenue in Westfield, in a house that had an in-door swimming pool! Charles was known for his intelligence and sharp business skills. When the great recession hit in 1920, Charles kept all of his employees on the payroll even though there were few sales. Hilda’s husband Ward Brewster Malmar purchased Reeb Millwork from Charles, and then sold it on retirement. The Reeb company still exists in more modern form today (www.Reeb.com).",
+      },
+      {
+        kind: "image",
+        src: "/about/charles-e-reeb.jpg",
+        alt: "Sepia portrait photograph of Charles E. Reeb in a suit and high collar",
+        width: 637,
+        height: 934,
+        caption: "Charles E. Reeb",
       },
       {
         kind: "p",
@@ -208,6 +228,22 @@ export const mkffHistorySections: readonly MkffContentSection[] = [
       {
         kind: "p",
         text: "After receiving his Ph.D. in Organic Chemistry, Cecil took a job in industrial chemistry at General Aniline and Film (now GAF Corporation) in New York and moved to New Jersey. During his career, he helped develop the formula for liquid detergent and the formula for the very popular Dove soap.",
+      },
+      {
+        kind: "image",
+        src: "/about/working-in-the-lab.jpg",
+        alt: "Black-and-white photograph of Cecil M. Knowles seated in a chemistry laboratory surrounded by glassware",
+        width: 800,
+        height: 553,
+        caption: "Working in the lab",
+      },
+      {
+        kind: "image",
+        src: "/about/valerie-cecil-knowles.jpg",
+        alt: "Color portrait photograph of Valerie Brewster Malmar and Cecil M. Knowles",
+        width: 500,
+        height: 728,
+        caption: "Valerie Brewster Malmar and Cecil M. Knowles",
       },
       {
         kind: "p",

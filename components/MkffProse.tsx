@@ -31,16 +31,27 @@ function ProseBlock({ block }: { block: MkffContentBlock }) {
           ))}
         </ol>
       );
-    case "image":
+    case "image": {
+      const sizing = block.height > block.width ? "max-w-xs" : "max-w-md";
       return (
-        <Image
-          src={block.src}
-          alt={block.alt}
-          width={block.width}
-          height={block.height}
-          className="h-auto w-full max-w-md border border-[var(--mkff-border)]"
-        />
+        <figure>
+          <Image
+            src={block.src}
+            alt={block.alt}
+            width={block.width}
+            height={block.height}
+            className={`h-auto w-full ${sizing} border border-[var(--mkff-border)]`}
+          />
+          {block.caption ? (
+            <figcaption
+              className={`mt-2 ${sizing} text-center font-display text-[13px] italic leading-5 text-[var(--mkff-gray)]`}
+            >
+              {block.caption}
+            </figcaption>
+          ) : null}
+        </figure>
       );
+    }
   }
 }
 
