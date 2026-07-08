@@ -2,32 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
+import { MkffProseSections } from "@/components/MkffProse";
 import { SubpageHero } from "@/components/SubpageHero";
-import { mkffAboutNavItems } from "@/lib/mkff-about";
+import { mkffAboutKectilSections, mkffAboutNavItems } from "@/lib/mkff-about";
 
 export const metadata: Metadata = {
   title: "About MKFF | Malmar Knowles Family Foundation",
   description:
-    "The Malmar Knowles Family Foundation is the parent organization of The Kectil Program, created to nurture, network, and mentor youth in developing countries.",
+    "The Kectil Program was created to identify and nurture highly talented youth in developing countries. MKFF is its parent organization.",
   alternates: {
     canonical: "/about",
   },
 };
-
-const missionNames = [
-  {
-    title: "MKFF",
-    body: "The family foundation behind it all — a 501(c)(3) nonprofit organized in Georgia, USA, and the parent organization of The Kectil Program.",
-  },
-  {
-    title: "Kectil Program",
-    body: "A leadership program that nurtures, networks, and mentors high-potential youth from developing countries through mentoring, coursework, and a growing alumni community.",
-  },
-  {
-    title: "Global Youth Index",
-    body: "Public, citable research built from Kectil Youth Speak surveys, published in aggregate so anyone can read what young people are reporting.",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -35,9 +21,9 @@ export default function AboutPage() {
       <SubpageHero
         eyebrow="About MKFF"
         note="History, purpose, and directors"
-        title="About MKFF,"
-        titleAccent="Kectil, and the Index."
-        lede="The Malmar Knowles Family Foundation is the parent organization of The Kectil Program, created to nurture, network, and mentor youth in developing countries. The Global Youth Index shares what those young people are saying with the wider world."
+        title="About MKFF"
+        titleAccent="and The Kectil Program"
+        lede="The Kectil Program was created to identify and nurture highly talented youth in developing countries who have the potential to make a positive difference in their communities and countries."
         links={[
           { label: "History of MKFF", href: "/about/history" },
           { label: "Our Directors", href: "/about/directors" },
@@ -84,38 +70,14 @@ export default function AboutPage() {
         <div className="container">
           <div className="section-rule pb-16">
             <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
-              How it connects
+              The Kectil Program
             </div>
             <div className="hidden text-xs uppercase tracking-[0.18em] text-[var(--mkff-gray)] sm:block">
-              One mission, three names
+              Mission, Kectil Code, and who can apply
             </div>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-[360px_minmax(0,1fr)] lg:gap-20">
-            <div className="flex flex-col gap-5">
-              <h2 className="font-display text-4xl leading-tight text-[var(--mkff-ink)] md:text-5xl md:leading-[1.06]">
-                One mission, three names.
-              </h2>
-              <p className="max-w-sm text-[15px] leading-7 text-[var(--mkff-muted)]">
-                MKFF is the nonprofit foundation, The Kectil Program is its
-                youth leadership work, and the Global Youth Index is where the
-                research from that work is shared publicly.
-              </p>
-            </div>
-
-            <div className="flex flex-col divide-y divide-[var(--mkff-border)] border-y border-[var(--mkff-border)]">
-              {missionNames.map((item) => (
-                <div key={item.title} className="grid gap-3 py-7 md:grid-cols-[240px_minmax(0,1fr)] md:gap-10">
-                  <h3 className="font-display text-2xl font-medium leading-8 text-[var(--mkff-oxblood)]">
-                    {item.title}
-                  </h3>
-                  <p className="text-[15px] leading-7 text-[var(--mkff-charcoal)]">
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <MkffProseSections sections={mkffAboutKectilSections} />
 
           <div className="mt-16 flex flex-wrap gap-4">
             <Link href="/about/history" className="btn-primary">

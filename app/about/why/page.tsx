@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
+import { MkffProseSections } from "@/components/MkffProse";
 import { SubpageHero } from "@/components/SubpageHero";
-import { mkffWhyPrinciples } from "@/lib/mkff-about";
+import { mkffWhyLetter } from "@/lib/mkff-about";
 
 export const metadata: Metadata = {
-  title: "Why I Created Kectil | Malmar Knowles Family Foundation",
+  title: "The Project and the Challenge — Why I Created Kectil | Malmar Knowles Family Foundation",
   description:
-    "Founder Sherry M. Knowles on why she built a program to nurture, network, and mentor talented youth in developing countries.",
+    "Founder Sherry M. Knowles on “The Project and the Challenge” — why she created The Kectil Program, in her own words.",
   alternates: {
     canonical: "/about/why",
   },
@@ -20,9 +21,9 @@ export default function WhyPage() {
       <SubpageHero
         eyebrow="Why I Created Kectil"
         note="Founder — Sherry M. Knowles"
-        title="Built to nurture, network,"
-        titleAccent="and mentor young leaders."
-        lede="Sherry M. Knowles created Kectil to identify and nurture highly talented youth in developing countries — young people with the potential to be leaders and make a positive difference in their communities, their countries, and maybe even the world."
+        title="The Project"
+        titleAccent="and the Challenge"
+        lede="Many people have asked me over the past year why I created The Kectil Program. And why I am spending so much time and effort on it? Why such a large project? Why should we spend family money on this? Why am I spending weekends answering emails from countries I have never visited to speak with youth I have never met? And on and on."
         links={[
           { label: "Meet the directors", href: "/about/directors" },
           { label: "History of MKFF", href: "/about/history" },
@@ -31,32 +32,14 @@ export default function WhyPage() {
 
       <section className="section border-b border-[var(--mkff-border)] bg-[var(--mkff-cream)]">
         <div className="container">
-          <div className="section-rule pb-16">
-            <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gold)]">
-              The idea
-            </div>
-            <div className="hidden text-xs uppercase tracking-[0.18em] text-[var(--mkff-gray)] sm:block">
-              Talent is everywhere. Opportunity is not.
-            </div>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
-            {mkffWhyPrinciples.map((principle, index) => (
-              <div
-                key={principle.title}
-                className="flex flex-col gap-5 border border-[var(--mkff-border)] bg-white p-8"
-              >
-                <span className="font-display text-sm font-semibold tracking-[0.2em] text-[var(--mkff-gold)]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h2 className="font-display text-2xl font-medium leading-8 text-[var(--mkff-oxblood)]">
-                  {principle.title}
-                </h2>
-                <p className="text-[15px] leading-7 text-[var(--mkff-charcoal)]">
-                  {principle.body}
-                </p>
-              </div>
-            ))}
+          <MkffProseSections
+            sections={[{ blocks: mkffWhyLetter.intro }, ...mkffWhyLetter.sections]}
+          />
+          <div className="mt-12 text-[15px] leading-7 text-[var(--mkff-charcoal)]">
+            <p>{mkffWhyLetter.signOff[0]}</p>
+            <p className="font-display text-lg font-medium text-[var(--mkff-oxblood)]">
+              {mkffWhyLetter.signOff[1]}
+            </p>
           </div>
         </div>
       </section>

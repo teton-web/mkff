@@ -26,13 +26,13 @@ export const mkffAboutNavItems: MkffAboutNavItem[] = [
     label: "History of MKFF",
     href: "/about/history",
     description:
-      "How two family stories — one arriving through Ellis Island, one raised on a Mississippi farm — became the foundation behind Kectil.",
+      "Everyone has a story. Our parents, grandparents, ancestors, the places and situations they were from and the places and situations we grew up in help create the fabric of our lives.",
   },
   {
     label: "Why I Created Kectil",
     href: "/about/why",
     description:
-      "Founder Sherry M. Knowles on why she built a program to nurture, network, and mentor youth in developing countries.",
+      "Many people have asked me over the past year why I created The Kectil Program. I answer that it is “The Project and the Challenge.”",
   },
   {
     label: "Our Directors",
@@ -42,43 +42,274 @@ export const mkffAboutNavItems: MkffAboutNavItem[] = [
   },
 ];
 
-export const mkffHistoryTimeline = [
-  {
-    label: "Family roots",
-    title: "Everyone has a story",
-    body: "The foundation's story runs through two families. The Malmar name was coined at Ellis Island, when a Swedish immigrant who spoke no English answered the officials with the name of his hometown, Malmö. The Knowles family raised their children on a Mississippi farm with no electricity and a one-room schoolhouse — and sent two of them on to Ph.D.s in chemistry. What both families passed down was the conviction that education and hard work open doors.",
-  },
-  {
-    label: "The foundation",
-    title: "The Malmar Knowles Family Foundation",
-    body: "MKFF is a nonprofit corporation organized under the laws of Georgia, USA and Section 501(c)(3) of the Internal Revenue Code, and is the parent organization of The Kectil Program. The Malmar name stands as a tribute to the many people who, in their own ways, work to build a better life for themselves and their families.",
-  },
-  {
-    label: "The Kectil Program",
-    title: "A trust for international leadership",
-    body: "Kectil — the Knowles Educational and Charitable Trust for International Leadership — was created to identify and nurture highly talented youth in developing countries who have the potential to be leaders and make a positive difference in their communities, their countries, and maybe even the world.",
-  },
-  {
-    label: "Global Youth Index",
-    title: "Sharing what young people are saying",
-    body: "The Global Youth Index carries that mission forward. It publishes what youth in the Kectil community report — as aggregate, citable research — so their priorities can be heard far beyond the program itself.",
-  },
-] as const;
+/**
+ * Verbatim MKFF/Kectil copy supplied by the client (Sherry Knowles).
+ * Body text must not be paraphrased, shortened, or retitled — styling is the
+ * site's, the words are hers. Sources: kipsllc.com/kectil-website ("KECTIL
+ * ABOUT US", July 5 2026), her "The Project and the Challenge" letter (same
+ * email), and the About MKFF page she wrote for kectil.com (2017).
+ */
+export type MkffContentBlock =
+  | { kind: "p"; text: string }
+  | { kind: "quote"; text: string }
+  | { kind: "list"; items: readonly string[] }
+  | { kind: "image"; src: string; alt: string; width: number; height: number };
 
-export const mkffWhyPrinciples = [
+export type MkffContentSection = {
+  /** Heading exactly as the client wrote it; omitted for untitled intro/closing passages. */
+  title?: string;
+  blocks: readonly MkffContentBlock[];
+};
+
+/** "The Kectil Program" write-up (Mission, Kectil Code, The Kectil Program, Who Can Apply). */
+export const mkffAboutKectilSections: readonly MkffContentSection[] = [
   {
-    title: "Talent is everywhere; opportunity is not",
-    body: "Highly talented young people can be found in every country. What many lack is training, professional exposure, and a guided network of similarly talented and passionate peers who support, nurture, teach, and learn from each other as they mature.",
+    title: "Mission",
+    blocks: [
+      {
+        kind: "p",
+        text: "The Kectil Program was created to identify and nurture highly talented youth in developing countries who have the potential to make a positive difference in their communities and countries.",
+      },
+      {
+        kind: "p",
+        text: "We accomplish our Mission Statement by (i) facilitating innovative leadership training and (ii) providing a means to allow these highly talented youth become part of a guided network with other similarly talented and passionate youth in developing countries who will support, nurture, teach and learn from each other as they mature.",
+      },
+      {
+        kind: "p",
+        text: "The Kectil Framework embodies both of the goals of the famous African proverb:",
+      },
+      {
+        kind: "quote",
+        text: "“If you want to go fast, go alone; if you want to go far, go together.”",
+      },
+    ],
   },
   {
-    title: "You are bigger than yourself",
-    body: "Knowing you are embraced and supported by peers in your own country and in other countries is central to a young leader's confidence — the confidence to make a positive difference in your community, your country, and the world.",
+    title: "Kectil Code",
+    blocks: [
+      {
+        kind: "p",
+        text: "The Kectil Code is the framework of the Kectil Program. Each participant is required to comply with the Kectil Code.",
+      },
+      {
+        kind: "list",
+        items: [
+          "Each participant shall be referred to as a Kectil Colleague and shall treat others as Colleagues.",
+          "Each Kectil Colleague will give equal respect to every other Kectil Colleague regardless of nationality, religion, culture or gender.",
+          "Each Kectil Colleague will discuss ideas and contributions of other Kectil Colleagues with positive, collaborative and respectful comments.",
+          "Each Kectil Colleague will honor the Developing Country Youth Leadership Network by creating positive, lasting bonds with other Kectil Colleagues with the intent to stay connected and positively support each other toward future leadership that adds value to the local and national community.",
+          "Each Kectil Colleague will carry out all the assignments of the program.",
+          "Each Kectil Colleague will use best effort to attend each webcast of the program.",
+          "Kectil Colleagues uphold the honor of the Kectil Program by treating others in his/her community with respect and compassion.",
+          "Kectil Colleagues will not take non-prescribed drugs or misuse alcohol.",
+          "If selected to attend the Developing Country Youth Leadership Conference in Atlanta, the Kectil Colleague will conduct himself/herself in a manner that is a role model for others and will be an excellent representative of his/her community.",
+        ],
+      },
+    ],
   },
   {
-    title: "If you want to go far, go together",
-    body: "The Kectil framework is built on the famous African proverb: if you want to go fast, go alone; if you want to go far, go together. Kectil brings talented youth together so they can go far — as a global network of peers.",
+    title: "The Kectil Program",
+    blocks: [
+      {
+        kind: "p",
+        text: "“KECTIL” is an acronym that refers to the Knowles Educational and Charitable Trust for International Leadership.",
+      },
+      {
+        kind: "p",
+        text: "The Kectil Program is based of the following principals:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Creating an authentic, collaborative network of high potential youth from developing and least developed countries can break down prejudices, lead to cultural, religious and gender understanding and give youth the comfort that they are more than just themselves– they are part of a mutual youth-based support system with the goal to make a positive difference in their lives, their Colleagues’ lives and the lives of those in their communities.",
+          "Identifying, embracing and mentoring high potential youth (17-26) from developing and least developed countries can have a dramatic effect on the youths’ dreams, service to others and life accomplishments.",
+          "Nothing comes easy and there is “no free lunch.” The results will not be achieved without hard work, dedication and an open mindedness to cultural understanding and compassion.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "The Program works to achieve these goals in three parts: a one-year Web-based Program, the Developing Youth Leadership Conference in Atlanta, United States, and the Alumni Network.",
+      },
+      {
+        kind: "p",
+        text: "Due to logistics and cost, more applicants can be accepted for the Web-based Program than the Developing Youth Leadership Conference in Atlanta. If an applicant is accepted for the Web-based Program but not the Developing Youth Leadership Conference, the applicant can apply the next year to attend the Conference. All applicants accepted for either (i) the Web-based Program or (ii) the Web-based Program and the Leadership Conference are encouraged to join and actively participate in the Alumni Network at the end of the Program.",
+      },
+    ],
   },
-] as const;
+  {
+    title: "Who Can Apply",
+    blocks: [
+      {
+        kind: "p",
+        text: "High potential youth (aged 17-26) in least developed and developing countries who have demonstrated a talent and passion for leadership, scholarship or innovation, are proficient in English and have access to a computer and the internet.",
+      },
+    ],
+  },
+];
+
+/** "About MKFF" write-up — the family history behind the foundation. */
+export const mkffHistorySections: readonly MkffContentSection[] = [
+  {
+    blocks: [
+      {
+        kind: "p",
+        text: "Everyone has a story. Our parents, grandparents, ancestors, the places and situations they were from and the places and situations we grew up in help create the fabric of our lives. What is your story? We would love to hear from youth in developing or least developed countries about your relatives and your communities. Our stories are a reflection of our culture–beauty, love, challenges, successes, failures, advancements, hardships and just…life. Please send to mail@kectil.com.",
+      },
+      {
+        kind: "p",
+        text: "The Malmar Knowles Family Foundation (“MKFF”) is the parent organization of The Kectil Program. It is a Non-profit Corporation organized under the laws of Georgia, USA and Section 501(c)(3) of the Internal Revenue Code.",
+      },
+      {
+        kind: "p",
+        text: "Here is the story of the people who formed the fabric of my life…My story is not of course from a developing country nor does it reflect the types of challenges that can be found in developing countries, but it does describe the roots and the people behind The Kectil Program, who I would like to introduce you to.",
+      },
+    ],
+  },
+  {
+    title: "The Malmar Family and Ancestors",
+    blocks: [
+      {
+        kind: "p",
+        text: "My mother was Valerie Brewster Malmar, and when she married my father, Dr. Cecil M. Knowles, became Valerie Malmar Knowles. She was born in Westfield, New Jersey in 1921 to Hilda Reeb and Ward Brewster Malmar. She was the life of the party and the sunshine in the house. When she passed away in 2015, it was stated that “According to her daughters, Valerie was the best mother a child could have. She combined wisdom, fun, generosity, good judgement and a grand sense of adventure. Whenever she walked into a room her infectious smile and radiant countenance brightened the room. It was not uncommon for strangers to engage her in conversation because she possessed that rare ability to listen, to understand and to lift others up.” She taught us not to take life too seriously, and to find something positive in any situation. She also taught us to speak with every person in the room to discover what is important to that person, and we would then be quizzed on what we learned!",
+      },
+      {
+        kind: "p",
+        text: "Hilda Reeb, born in 1894, Valerie’s mother and my grandmother, was an extremely smart woman who read four newspapers a day (and studied the stock market!) and spoke five languages. Hilda was born in Ohio to Charles E. Reeb and Jennie Burrows, who later moved to Brooklyn NY when it was still farmland and then to New Jersey. Hilda spent the majority of her life in Westfield and Summit, New Jersey, and died in 1975. She was educated at Miss Mason’s School, The Castle, in Tarrytown NY, a girl’s school where she was elected President of her class.",
+      },
+      {
+        kind: "p",
+        text: "Hilda was born before women could have a career or maximize their talents, and so she entertained herself by playing duplicate bridge tournaments in New York City, playing the piano beautifully without any written music sheets (wonderfully enjoyed during the holidays for sing-alongs) and traveling on numerous adventure trips around the world. I remember going with my parents to the port of New York to drop her (and many trunks) at huge ocean liners and then picking her up with the cultural treasures she brought back. She always traveled alone, again highly unusual for a woman at the time. The captains on the ships often asked her to provide guest piano performances for others on the ship.",
+      },
+      {
+        kind: "p",
+        text: "I attach some of her Passports here, which begin in 1950. Her Passport stamps as early as the 1950’s establish her keen interest in developing countries, with evidence of entry into Egypt, India, Pakistan, Nepal, Thailand, China and other countries.",
+      },
+      {
+        kind: "p",
+        text: "Hilda’s father, my great-grandfather, Charles E. Reeb, born in 1869, was a successful businessman and entrepreneur. He was in the business of construction materials, starting the company “Door & Sash” in Pennsylvania and then creating Reeb Millwork in 1912 in New Jersey. The Reebs lived on Highland Avenue in Westfield, in a house that had an in-door swimming pool! Charles was known for his intelligence and sharp business skills. When the great recession hit in 1920, Charles kept all of his employees on the payroll even though there were few sales. Hilda’s husband Ward Brewster Malmar purchased Reeb Millwork from Charles, and then sold it on retirement. The Reeb company still exists in more modern form today (www.Reeb.com).",
+      },
+      {
+        kind: "p",
+        text: "Hilda’s husband and my grandfather, Ward Brewster Malmar, was born in 1890 in New York. Ward traces his roots to Malmӧ, Sweden. His father, Ernest Malmar, was born in 1855 in Sweden and immigrated to the United States from Sweden with his brother, passing through the entry port of Ellis Island, N.Y. When the U.S. immigration officials asked their last name, the brothers, who did not speak English, gave the name of their hometown, Malmӧ. The immigration official translated this as “Malmar”, which became their last name. Malmar is now the first name of this Family Foundation, which can be considered a form of tribute to the many people from countries who use various ways to provide a better life for themselves and their families. Ward was a kind, gentle man who ran Reeb Millwork and then retired to his boat in Fort Lauderdale, Florida, where he died in 1959.",
+      },
+      {
+        kind: "p",
+        text: "Ward’s mother (Ernest’s wife) was Grace Abigail Brewster, who was born in 1865 and died in 1929. Grace was a direct descendant of William Brewster, a Pilgrim from England with diplomatic, political and religious experience who was one of the leaders of the 1620 voyage of the Mayflower from Netherlands to Plymouth, Massachusetts, and among the founders of the Plymouth Rock Colony. Grace was a member of The National Society of Colonial Dames of America, which is an American organization composed of women who are descended from an ancestor who came to reside in an American colony before 1776, and whose services were rendered during the Colonial Period.",
+      },
+    ],
+  },
+  {
+    title: "The Knowles Family and Ancestors",
+    blocks: [
+      {
+        kind: "p",
+        text: "It has seemed ironic to some that my mother, Valerie Knowles, a sophisticated socialite from New Jersey, married Cecil M. Knowles (1917-1998), who was born and raised in a very rural area of Mississippi, an agricultural state located in the southeastern United States. My father grew up on a working farm that did not have electricity until after President Franklin Delano Roosevelt enacted the Rural Electrification Act of 1936, and did not have inside bathrooms during his youth. The family grew almost all of their own food with meat-producing animals and crops. His father, Claudie Martin Knowles (1896-1969) and mother Eleanor Knowles (1897-1992) ran a dairy farm. The family included two sons (my father and M.B.) and two daughters (Merle and Alla Frances). In many ways, Mississippi at that time resembled the conditions sometimes found in disadvantaged areas of developing countries. The children were taught in a one room school house for all grades. Therefore, of importance to the Kectil Program today, there was a great emphasis on education and strict discipline from mother Elnora which encouraged her children to study into the evening on the farm by lamplight. The parents’ demand for achievement motivated both my father and his brother to leave the farm, pursue higher education and ultimately both receive Masters and Ph.D. degrees from the University of Texas in Organic Chemistry.",
+      },
+      {
+        kind: "p",
+        text: "After receiving his Ph.D. in Organic Chemistry, Cecil took a job in industrial chemistry at General Aniline and Film (now GAF Corporation) in New York and moved to New Jersey. During his career, he helped develop the formula for liquid detergent and the formula for the very popular Dove soap.",
+      },
+      {
+        kind: "p",
+        text: "Cecil met Valerie Malmar through friends in New Jersey. Valerie’s mother Hilda told Valerie that Cecil was the one to marry because Hilda saw Cecil was a very smart self-made man who valued education-and Valerie listened to her mother.",
+      },
+      {
+        kind: "p",
+        text: "My father was quiet, studious and smart. Cecil emphasized education and good grades to me and my sister and demanded hard work. Another attribute I watched and admired was that when he was in a situation with people talking about subjects he might not be familiar with, he made sure he was always the last person to speak. He would listen to what each person had to say, and then when he finally spoke he had time to think about it, said something quite intuitive and then stopped talking. A great skill I am not sure I have accomplished!",
+      },
+      {
+        kind: "p",
+        text: "This unlikely group of a fun-loving socialite, a woman too smart for the time period and community she lived in, a successful businessman, an immigrant who passed through Ellis Island, a descendant from a leader of the Mayflower voyage who established the Plymouth Colony in Massachusetts, and a family who raised children in a home without electricity and bathroom plumbing with one-room school house training that produced two Ph.D.s in chemistry are the history of The Malmar Knowles Family Foundation that brings The Kectil Program to you.",
+      },
+    ],
+  },
+  {
+    blocks: [
+      {
+        kind: "p",
+        text: "The title \"Kectil\" refers to the \"Knowles Educational and Charitable Trust for International Leadership\". The goal of this program is to nurture, network, and mentor youth in developing countries who have the potential to be leaders and make a positive difference in their communities, countries..... and maybe even the world!",
+      },
+    ],
+  },
+];
+
+/** "The Project and the Challenge" — the founder's letter on why she created Kectil. */
+export const mkffWhyLetter = {
+  title: "The Project and the Challenge",
+  intro: [
+    {
+      kind: "p",
+      text: "Many people have asked me over the past year why I created The Kectil Program. And why I am spending so much time and effort on it? Why such a large project? Why should we spend family money on this? Why am I spending weekends answering emails from countries I have never visited to speak with youth I have never met? And on and on.",
+    },
+    {
+      kind: "p",
+      text: "I answer that it is “The Project and the Challenge.”",
+    },
+  ] as readonly MkffContentBlock[],
+  sections: [
+    {
+      title: "The Project",
+      blocks: [
+        {
+          kind: "p",
+          text: "We think life is long but it is very short. And we have no idea what day it will be over. Physicists now tell us that the universe was created about 13.5 billion years ago and that we are all made of stardust (I like that idea!). It is also estimated that our universe has about 5 billion years left before it starts contracting. If we live 100 years out of that 18.5 billion years, we are lucky.",
+        },
+        {
+          kind: "p",
+          text: "Add to that the odds that any of us will be born at all. Imagine how many individual eggs and sperm existed on the day we were conceived—what are the odds that the exact two would come together to form each of us? And the ratio of pairs that did not result in a life greatly dwarfs those few that did. Every person who walks on this earth is a winner who has already won the lottery. We were given the extraordinary gift of the right to exist for a short time. We should wake up every morning with appreciation, regardless of our circumstances.",
+        },
+        {
+          kind: "p",
+          text: "I am reminded of one of my favorite childhood books, Miss Rumphius by Barbara Cooney. If you haven’t read it and don’t mind reading a child’s book, I recommend it. It is the story of Alice Rumphius, a woman who wanted to go to faraway places and then live by the sea. As a young woman, she traveled to many spots with great adventure. She then settled into a seaside town and realized there is one thing left to do: “You must do something to make the world more beautiful.” After a hard winter, Alice noticed that the gorgeous purple, blue and rose lupine flowers survive the cold weather. She immediately knew what to do. She ordered lupine seeds and dropped them all over her town. The lupines prospered, turning her community into a magical sight enjoyed by all.",
+        },
+        {
+          kind: "image",
+          src: "/about/miss-rumphius.png",
+          alt: "Cover of the book Miss Rumphius, story and pictures by Barbara Cooney",
+          width: 438,
+          height: 364,
+        },
+        {
+          kind: "p",
+          text: "The message is clear-we each need to search for that one thing we can do—“The Project”—that will make the world a more beautiful place than if you had not been the one of the infinitesimally few to win the lottery and experience life. I am strongly of the conviction that each person who has been given the miracle of life against all odds should at some point in his/her life select and carry out a Project that is of a scale equal to what has been given to that person in assets and ability during life. It should be something that is given with nothing expected in return and it should be something that makes the world a little bit better than when you got here. It is a gift.",
+        },
+        {
+          kind: "p",
+          text: "I spent many years thinking about what my ”Project” should be. After my mother died in July 2015, it immediately came to me, as it did to Miss Rumphius, what I should do. I had also traveled the world and met many people. I am unusually fortunate to work with many great minds. I decided to create a family foundation to network youth in developing countries as a communications and growth platform for ethical leadership, career building and global understanding. The Kectil Program is my “Project”. It is my gift and it is my hope that this unique forum for talented youth grows as well as lupines spread across the fields.",
+        },
+      ],
+    },
+    {
+      title: "The Challenge",
+      blocks: [
+        {
+          kind: "p",
+          text: "What about “The Challenge”? The challenge is to think of something that is impossible, and then achieve it. The Kectil Program is also an example of “The Challenge”.",
+        },
+        {
+          kind: "p",
+          text: "When this Program was imagined, I had no idea how to accomplish it. Most would say it isn’t possible for a small group of people to put together a program like this, much less in one year. I didn’t know what the framework should look like. I had to manage the creation of a website and then an application portal, having no experience in running a non-profit foundation, much less global recruitment. I had to publicize it so talented youth would come to the site and participate. I had to recruit faculty, mentors and an unparalleled Advisory Board. And I had to accomplish all of this while working full time as a lawyer at a firm I founded, while meeting all of the clients’ expectations and deadlines.",
+        },
+        {
+          kind: "p",
+          text: "Kectil could not have been accomplished without leaning heavily on others with great talent and passion, who stepped up to help spread the word and provide advice and direction. The Kectil Directors, my children Brooke Shafer and Chris Zalesky, gave essential help and support with infrastructure and youth perspective. The Advisory Board, all volunteers, spent hours of their valuable time with suggestions, introductions, and contributions of content.",
+        },
+        {
+          kind: "p",
+          text: "My challenge to you is likewise to aim higher than you think you are able to go, and then figure out a way to get there and surpass it. You have the ability, talent and passion to do this. We hope this Program will be a small contribution to your journey to accomplish the impossible.",
+        },
+        {
+          kind: "image",
+          src: "/about/achieve-the-impossible.png",
+          alt: "Quote graphic reading “Only those who attempt the absurd can achieve the impossible.” — Albert Einstein",
+          width: 500,
+          height: 239,
+        },
+      ],
+    },
+  ] as readonly MkffContentSection[],
+  signOff: ["With kind regards", "Sherry Knowles"] as readonly string[],
+};
 
 export const mkffDirectors: MkffDirectorProfile[] = [
   {

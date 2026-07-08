@@ -1,9 +1,13 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 export function Mission() {
+  // Verbatim excerpts from the client's Kectil Code; the full nine-point Code is on /about.
   const codeItems = [
-    "Equal respect regardless of nationality, religion, culture, or gender.",
-    "Positive, collaborative dialogue and lasting bonds across borders.",
-    "Hard work, open-mindedness, compassion, and service.",
-    "Role-model conduct in their communities.",
+    "Each participant shall be referred to as a Kectil Colleague and shall treat others as Colleagues.",
+    "Each Kectil Colleague will give equal respect to every other Kectil Colleague regardless of nationality, religion, culture or gender.",
+    "Each Kectil Colleague will discuss ideas and contributions of other Kectil Colleagues with positive, collaborative and respectful comments.",
+    "Kectil Colleagues uphold the honor of the Kectil Program by treating others in his/her community with respect and compassion.",
   ];
 
   return (
@@ -24,18 +28,19 @@ export function Mission() {
         <div className="grid gap-14 pt-6 lg:grid-cols-[minmax(0,820px)_360px] lg:gap-24">
           <div className="flex flex-col gap-8">
             <h2 className="font-display text-4xl leading-tight text-[var(--mkff-ink)] md:text-6xl md:leading-[1.06]">
-              We identify and nurture high-potential youth who will transform
-              their communities and their countries.
+              The Kectil Program was created to identify and nurture highly
+              talented youth in developing countries who have the potential to
+              make a positive difference in their communities and countries.
             </h2>
             <div className="flex gap-5 pt-4">
               <div className="w-1 shrink-0 bg-[var(--mkff-gold)]" />
               <p className="max-w-3xl text-[17px] leading-8 text-[var(--mkff-charcoal)]">
-                MKFF was created in 2015 by Sherry M. Knowles, an intellectual
-                property attorney whose work at the highest levels of global
-                pharma and with WIPO on technology transfer to developing
-                countries inspired a new mission: building the next generation
-                of ethical, innovative leaders through training, mentorship,
-                and a guided international network.
+                We accomplish our Mission Statement by (i) facilitating
+                innovative leadership training and (ii) providing a means to
+                allow these highly talented youth become part of a guided
+                network with other similarly talented and passionate youth in
+                developing countries who will support, nurture, teach and learn
+                from each other as they mature.
               </p>
             </div>
           </div>
@@ -43,10 +48,10 @@ export function Mission() {
           <aside className="flex flex-col gap-6 pt-2">
             <div className="border-b border-[var(--mkff-border)] pb-5">
               <div className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--mkff-gray)]">
-                The Kectil Code
+                Kectil Code
               </div>
               <div className="mt-2 font-display text-[22px] italic leading-8 text-[var(--mkff-oxblood)]">
-                Every Kectil Colleague commits to —
+                Each participant is required to comply with the Kectil Code.
               </div>
             </div>
             <div className="flex flex-col gap-5">
@@ -61,6 +66,12 @@ export function Mission() {
                 </div>
               ))}
             </div>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--mkff-oxblood)] hover:text-[var(--mkff-maroon)]"
+            >
+              Read the full Kectil Code <ArrowRight className="h-4 w-4" />
+            </Link>
           </aside>
         </div>
       </div>
