@@ -51,20 +51,15 @@ export function AboutMKFF() {
               </summary>
               <div className="mt-6 grid gap-6 text-[15px] leading-7 text-[var(--mkff-charcoal)] md:grid-cols-2">
                 <p>
-                  The foundation&rsquo;s story runs through two families. The
-                  Malmar name was coined at Ellis Island, when a Swedish
-                  immigrant who spoke no English answered the officials with
-                  the name of his hometown, Malmö. The Knowles family raised
-                  their children on a Mississippi farm with no electricity and
-                  a one-room schoolhouse — and sent two of them on to Ph.D.s in
-                  chemistry.
+                  Everyone has a story. Our parents, grandparents, ancestors,
+                  the places and situations they were from and the places and
+                  situations we grew up in help create the fabric of our lives.
                 </p>
                 <p>
-                  What both families passed down was the conviction that
-                  education and hard work open doors. MKFF — a 501(c)(3)
-                  nonprofit organized in Georgia, USA — turns that inheritance
-                  outward through Kectil, the Knowles Educational and
-                  Charitable Trust for International Leadership.
+                  The Malmar Knowles Family Foundation (&ldquo;MKFF&rdquo;) is
+                  the parent organization of The Kectil Program. It is a
+                  Non-profit Corporation organized under the laws of Georgia,
+                  USA and Section 501(c)(3) of the Internal Revenue Code.
                 </p>
               </div>
               <Link
@@ -86,18 +81,16 @@ export function AboutMKFF() {
               </summary>
               <div className="mt-6 grid gap-6 text-[15px] leading-7 text-[var(--mkff-charcoal)] md:grid-cols-2">
                 <p>
-                  Founder Sherry M. Knowles built Kectil on a simple
-                  observation: talent is everywhere; opportunity is not. Highly
-                  talented young people can be found in every country. What
-                  many lack is training, professional exposure, and a guided
-                  network of similarly talented and passionate peers.
+                  Many people have asked me over the past year why I created
+                  The Kectil Program. And why I am spending so much time and
+                  effort on it? Why such a large project? Why should we spend
+                  family money on this?
                 </p>
                 <p>
-                  The framework rests on the famous African proverb: if you
-                  want to go fast, go alone; if you want to go far, go
-                  together. Kectil brings talented youth together — nurtured,
-                  networked, and mentored — so they can go far as a global
-                  community of young leaders.
+                  I answer that it is &ldquo;The Project and the
+                  Challenge.&rdquo; The challenge is to think of something that
+                  is impossible, and then achieve it. The Kectil Program is
+                  also an example of &ldquo;The Challenge&rdquo;.
                 </p>
               </div>
               <Link
